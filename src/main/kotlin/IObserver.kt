@@ -1,3 +1,3 @@
 interface IObserver {
-    fun update(string: String)
+    fun newData(data: Adam6024)
 }

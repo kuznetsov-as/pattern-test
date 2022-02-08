@@ -1,20 +1,12 @@
 fun main() {
-    val news = News()
-    val reader1 = Reader()
-    val reader2 = Reader()
-    val reader3 = Reader()
+    val adam6024 = Adam6024()
+    val elv = Elv()
+    val temperatureSensor = TemperatureSensor()
 
-    news.add(reader1)
-    news.add(reader2)
-    news.add(reader3)
+    adam6024.addNewListener(elv)
+    adam6024.addNewListener(temperatureSensor)
 
-    reader1.start()
-    reader2.start()
-    reader3.start()
-
-    Thread.sleep(2000)
-    println("Начали выходить новости")
-    news.newestArticle = "В город заявились разбойники!"
-    news.newestArticle = "Казна пуста!"
-    news.newestArticle = "Наследник царя помер!"
+    elv.start()
+    temperatureSensor.start()
+    adam6024.start()
 }
